@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Educativo - Productos No Originales de Nutricost en Perú</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 50%, #fff7ed 100%);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        
+        .warning-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #fde047;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .header h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+        
+        .disclaimer {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid #fbbf24;
+        }
+        
+        .disclaimer p {
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .testimonios {
+            background: #f9fafb;
+        }
+        
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonio {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonio img {
+            width: 100%;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .testimonio-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonio-icon {
+            color: #dc2626;
+            margin-right: 0.5rem;
+        }
+        
+        .testimonio-tag {
+            font-weight: 600;
+            color: #b91c1c;
+            font-size: 0.9rem;
+        }
+        
+        .testimonio-description {
+            color: #6b7280;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .alert-box {
+            background: #fee2e2;
+            border: 2px solid #fca5a5;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 800px;
+        }
+        
+        .alert-box h3 {
+            color: #b91c1c;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .alert-box p {
+            color: #991b1b;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .comparaciones {
+            background: white;
+        }
+        
+        .comparaciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .comparacion {
+            background: #f9fafb;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .comparacion img {
+            width: 100%;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .comparacion h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+        
+        .comparacion p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonios-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparaciones-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="warning-icon">⚠️</div>
+            <h1>¡ALERTA PRODUCTOS IMITACIÓN!</h1>
+            <h2>Nutricost en Perú - Protege tu Salud</h2>
+            <p>
+                Investigación educativa revela la presencia de productos no autorizados de Nutricost 
+                en el mercado peruano. Conoce cómo identificarlos y protegerte.
+            </p>
+            <div class="disclaimer">
+                <p><strong>📚 SITIO EDUCATIVO - PROTECCIÓN AL CONSUMIDOR</strong></p>
+                <p>Esta página tiene fines informativos y educativos para proteger a los consumidores peruanos. 
+                No vendemos productos ni tenemos afiliación comercial.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Situación de Riesgo -->
+    <section class="section">
+        <div class="container">
+            <h2>🚨 Situación de Riesgo en Perú</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #6b7280;">
+                Vendedores no autorizados están comercializando productos no originales de Nutricost, 
+                poniendo en riesgo la salud de los consumidores peruanos.
+            </p>
+            
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon" style="color: #dc2626;">🛡️</div>
+                    <h3>Productos No Originales</h3>
+                    <p>Suplementos con ingredientes desconocidos que pueden causar efectos adversos graves.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon" style="color: #ea580c;">👁️</div>
+                    <h3>Vendedores No Autorizados</h3>
+                    <p>Identificamos múltiples vendedores no autorizados operando en plataformas digitales.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon" style="color: #2563eb;">👥</div>
+                    <h3>Consumidores Afectados</h3>
+                    <p>Múltiples reportes de usuarios que recibieron productos sospechosos o defectuosos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparaciones Técnicas -->
+    <section class="section comparaciones">
+        <div class="container">
+            <h2>🔍 Guía Visual para Identificar Productos No Originales</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #6b7280;">
+                Comparaciones técnicas que muestran las diferencias entre productos originales y no originales
+            </p>
+            
+            <div class="comparaciones-grid">
+                <div class="comparacion">
+                    <img src="comparacion_cruces_negras_nutricost.jpeg" alt="Comparación de cruces negras en productos Nutricost">
+                    <h3>🔍 Cruces de Seguridad</h3>
+                    <p>Los productos no originales tienen cruces negras mal impresas o ausentes en el sello de seguridad.</p>
+                </div>
+                
+                <div class="comparacion">
+                    <img src="comparacion_logo_tapa_nutricost.jpeg" alt="Comparación del logo en la tapa de Nutricost">
+                    <h3>🏷️ Logo en la Tapa</h3>
+                    <p>El logo en productos no originales se ve borroso, descentrado o con colores incorrectos.</p>
+                </div>
+                
+                <div class="comparacion">
+                    <img src="comparacion_interior_tapa_nutricost.jpeg" alt="Comparación del interior de la tapa Nutricost">
+                    <h3>🔒 Interior de la Tapa</h3>
+                    <p>El interior de la tapa en productos no originales carece del sello de frescura adecuado.</p>
+                </div>
+                
+                <div class="comparacion">
+                    <img src="comparacion_base_envase_nutricost.jpeg" alt="Comparación de la base del envase Nutricost">
+                    <h3>📦 Base del Envase</h3>
+                    <p>La base del envase en productos no originales tiene códigos de lote incorrectos o ilegibles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="section testimonios">
+        <div class="container">
+            <h2>📱 Testimonios Reales de Usuarios Peruanos Afectados</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: #6b7280;">
+                Capturas auténticas de redes sociales muestran las experiencias de usuarios peruanos 
+                que fueron víctimas de productos no originales de Nutricost
+            </p>
+            
+            <div class="testimonios-grid">
+                <div class="testimonio">
+                    <img src="testimonio_maria_lopez.png" alt="Testimonio de María López sobre fraude en MercadoLibre">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">⚠️</span>
+                        <span class="testimonio-tag">Fraude en MercadoLibre</span>
+                    </div>
+                    <p class="testimonio-description">
+                        María López de Lima compró Nutricost en MercadoLibre por S/. 120 al vendedor BAYNATURAL2023. 
+                        El producto no se disolvía y le causó malestar estomacal.
+                    </p>
+                </div>
+
+                <div class="testimonio">
+                    <img src="testimonio_carlos_mendoza.png" alt="Testimonio de Carlos Mendoza sobre producto no original en Gamarra">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">❌</span>
+                        <span class="testimonio-tag">Producto No Original en Gamarra</span>
+                    </div>
+                    <p class="testimonio-description">
+                        Carlos Mendoza compró Omega 3 en una tienda de Gamarra. Las cápsulas tenían olor raro 
+                        y el envase se veía diferente. Perdió S/. 85.
+                    </p>
+                </div>
+
+                <div class="testimonio">
+                    <img src="testimonio_ana_rodriguez.png" alt="Testimonio de Ana Rodríguez sobre dudas en Falabella">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">⚠️</span>
+                        <span class="testimonio-tag">Dudas sobre Falabella</span>
+                    </div>
+                    <p class="testimonio-description">
+                        Ana Rodríguez compró Creatina en Falabella de "Visto de los Andes" y tiene serias dudas. 
+                        El sello de seguridad se veía diferente y el polvo tenía textura extraña.
+                    </p>
+                </div>
+
+                <div class="testimonio">
+                    <img src="testimonio_jose_torres.png" alt="Testimonio de José Torres sobre imitación con errores">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">❌</span>
+                        <span class="testimonio-tag">Imitación con Errores</span>
+                    </div>
+                    <p class="testimonio-description">
+                        José Torres recibió un producto claramente no original con errores de ortografía en el envase 
+                        y contenido que no coincidía con las especificaciones.
+                    </p>
+                </div>
+
+                <div class="testimonio">
+                    <img src="testimonio_lucia_vargas.png" alt="Testimonio de Lucía Vargas sobre farmacia en San Juan de Lurigancho">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">⚠️</span>
+                        <span class="testimonio-tag">Farmacia No Autorizada</span>
+                    </div>
+                    <p class="testimonio-description">
+                        Lucía Vargas compró Magnesio en una farmacia de San Juan de Lurigancho. 
+                        Le causó diarrea y náuseas por ser totalmente diferente al original.
+                    </p>
+                </div>
+
+                <div class="testimonio">
+                    <img src="testimonio_pedro_silva.png" alt="Testimonio de Pedro Silva sobre tienda en Miraflores">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">❌</span>
+                        <span class="testimonio-tag">Tienda en Miraflores</span>
+                    </div>
+                    <p class="testimonio-description">
+                        Pedro Silva de Arequipa compró en Miraflores por S/. 150. El envase tenía errores 
+                        de impresión y las cápsulas eran de otro color.
+                    </p>
+                </div>
+
+                <div class="testimonio">
+                    <img src="testimonio_sofia_ramirez.png" alt="Testimonio de Sofía Ramírez sobre vendedor que la bloqueó">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">⚠️</span>
+                        <span class="testimonio-tag">Vendedor Bloqueó Cliente</span>
+                    </div>
+                    <p class="testimonio-description">
+                        Sofía Ramírez recibió Omega 3 no original en MercadoLibre. Cuando reclamó, 
+                        el vendedor la bloqueó. Sello mal pegado y olor extraño.
+                    </p>
+                </div>
+
+                <div class="testimonio">
+                    <img src="testimonio_ricardo_flores.png" alt="Testimonio de Ricardo Flores sobre Creatina en Gamarra">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">❌</span>
+                        <span class="testimonio-tag">Creatina No Original en Gamarra</span>
+                    </div>
+                    <p class="testimonio-description">
+                        Ricardo Flores compró Creatina en Gamarra por S/. 95. Al compararla con una original, 
+                        el logo estaba borroso y el polvo tenía grumos.
+                    </p>
+                </div>
+
+                <div class="testimonio">
+                    <img src="testimonio_carmen_lopez.png" alt="Testimonio de Carmen López sobre farmacia en Los Olivos">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">⚠️</span>
+                        <span class="testimonio-tag">Farmacia Los Olivos</span>
+                    </div>
+                    <p class="testimonio-description">
+                        Carmen López compró Magnesio en Los Olivos. Las pastillas se deshacían muy rápido 
+                        y le causaron dolor de estómago. Envase con diferencias obvias.
+                    </p>
+                </div>
+
+                <div class="testimonio">
+                    <img src="testimonio_miguel_torres.png" alt="Testimonio de Miguel Torres sobre vendedor no autorizado">
+                    <div class="testimonio-header">
+                        <span class="testimonio-icon">❌</span>
+                        <span class="testimonio-tag">Vendedor No Autorizado</span>
+                    </div>
+                    <p class="testimonio-description">
+                        Miguel Torres de Cusco perdió S/. 180 con un vendedor que se hacía pasar por distribuidor oficial. 
+                        Etiquetas mal impresas y contenido que no coincidía.
+                    </p>
+                </div>
+            </div>
+
+            <div class="alert-box">
+                <h3>⚠️ Más de S/. 1,200 en Pérdidas Documentadas</h3>
+                <p><strong>Solo estos 10 casos representan más de S/. 1,200 en fraudes.</strong> 
+                Estos testimonios son evidencia real de la magnitud del problema en Perú.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container">
+            <h2>🛡️ Protege tu Salud y la de tu Familia</h2>
+            <div class="alert-box">
+                <h3>📢 Comparte esta Información</h3>
+                <p>Ayuda a otros consumidores a evitar productos no originales compartiendo esta página educativa. 
+                Juntos podemos proteger la salud de más peruanos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3>📚 Sitio Educativo</h3>
+            <p>Esta página tiene fines informativos y educativos</p>
+            <p>No vendemos productos ni tenemos afiliación comercial</p>
+            <p>Protección al consumidor peruano</p>
+        </div>
+    </footer>
+</body>
+</html>
+
